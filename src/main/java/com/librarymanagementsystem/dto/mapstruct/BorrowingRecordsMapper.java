@@ -1,7 +1,7 @@
 package com.librarymanagementsystem.dto.mapstruct;
 
 import com.librarymanagementsystem.dto.BorrowingRecordsDto;
-import com.librarymanagementsystem.entity.BorrowingRecords;
+import com.librarymanagementsystem.model.BorrowingRecords;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")

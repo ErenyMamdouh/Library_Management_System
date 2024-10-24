@@ -1,7 +1,7 @@
 package com.librarymanagementsystem.controller;
 
 import com.librarymanagementsystem.dto.PatronDto;
-import com.librarymanagementsystem.entity.Patron;
+import com.librarymanagementsystem.model.Patron;
 import com.librarymanagementsystem.exception.PatronException;
 import com.librarymanagementsystem.service.PatronService;
 import lombok.RequiredArgsConstructor;

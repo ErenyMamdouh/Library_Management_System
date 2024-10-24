@@ -4,11 +4,15 @@ package com.librarymanagementsystem.service;
 import com.librarymanagementsystem.dao.PatronRepo;
 import com.librarymanagementsystem.dto.PatronDto;
 import com.librarymanagementsystem.dto.mapstruct.PatronMapper;
-import com.librarymanagementsystem.entity.Patron;
+import com.librarymanagementsystem.model.Patron;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -22,7 +26,7 @@ public class PatronService {
     private final PatronMapper patronMapper;
     private static final Logger logger= LoggerFactory.getLogger(PatronService.class);
 
-
+    @Transactional
     public void savePatron(PatronDto patronDto){
 
         Patron patron= patronMapper.mapToEntity(patronDto);
@@ -31,12 +35,14 @@ public class PatronService {
 
     }
 
+    @Cacheable(value = "patrons",key = "#patronId")
     public Optional<PatronDto> getPatronbyId(Long patronId){
         logger.info(" Fetching patron with ID: {}",patronId);
 
         return patronRepo.findById(patronId).map(patronMapper::mapToDto);
     }
 
+    @CacheEvict(value = "patrons", key = "#root.methodName" , allEntries = true)
     public List<PatronDto> getAllPatrons(){
 
         logger.info(" Fetching all patrons");
@@ -47,6 +53,8 @@ public class PatronService {
                 .collect(Collectors.toList());
     }
 
+    @Transactional
+    @CachePut(value = "patrons", key = "#root.methodName")
     public Patron updatePatronbyId(PatronDto patronDto,Long patronId){
 
         Patron updatedPatron= patronMapper.mapToEntity(patronDto);
@@ -55,8 +63,11 @@ public class PatronService {
 
     }
 
+    @Transactional
+    @CacheEvict(value = "patrons",key = "#patronId",allEntries = true)
     public void deletePatronbyID(Long patronId){
 
         patronRepo.deleteById(patronId);
+
     }
 }

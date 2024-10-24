@@ -1,7 +1,7 @@
 package com.librarymanagementsystem.dto.mapstruct;
 
 import com.librarymanagementsystem.dto.PatronDto;
-import com.librarymanagementsystem.entity.Patron;
+import com.librarymanagementsystem.model.Patron;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")

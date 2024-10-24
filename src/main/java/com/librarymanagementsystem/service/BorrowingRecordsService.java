@@ -5,9 +5,9 @@ import com.librarymanagementsystem.dao.BorrowingRecordsRepo;
 import com.librarymanagementsystem.dao.PatronRepo;
 import com.librarymanagementsystem.dto.BorrowingRecordsDto;
 import com.librarymanagementsystem.dto.mapstruct.BorrowingRecordsMapper;
-import com.librarymanagementsystem.entity.Book;
-import com.librarymanagementsystem.entity.BorrowingRecords;
-import com.librarymanagementsystem.entity.Patron;
+import com.librarymanagementsystem.model.Book;
+import com.librarymanagementsystem.model.BorrowingRecords;
+import com.librarymanagementsystem.model.Patron;
 import com.librarymanagementsystem.exception.BookException;
 import com.librarymanagementsystem.exception.BorrowingRecordException;
 import com.librarymanagementsystem.exception.PatronException;
@@ -15,9 +15,11 @@ import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 
+@Transactional
 @Service
 @RequiredArgsConstructor
 public class BorrowingRecordsService {

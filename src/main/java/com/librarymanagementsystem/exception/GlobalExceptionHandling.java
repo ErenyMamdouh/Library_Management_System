@@ -40,4 +40,5 @@ public class GlobalExceptionHandling {
         );
         return new ResponseEntity<>(apiException, status);
     }
+
 }

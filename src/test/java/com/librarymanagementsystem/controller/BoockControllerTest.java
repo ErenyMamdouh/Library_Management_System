@@ -3,7 +3,7 @@ package com.librarymanagementsystem.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.librarymanagementsystem.dto.BookDto;
-import com.librarymanagementsystem.entity.Book;
+import com.librarymanagementsystem.model.Book;
 import com.librarymanagementsystem.service.BookService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

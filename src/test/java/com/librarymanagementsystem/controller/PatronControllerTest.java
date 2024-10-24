@@ -2,7 +2,7 @@ package com.librarymanagementsystem.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.librarymanagementsystem.dto.PatronDto;
-import com.librarymanagementsystem.entity.Patron;
+import com.librarymanagementsystem.model.Patron;
 import com.librarymanagementsystem.service.PatronService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

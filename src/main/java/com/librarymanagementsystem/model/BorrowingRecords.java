@@ -1,4 +1,4 @@
-package com.librarymanagementsystem.entity;
+package com.librarymanagementsystem.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

@@ -3,7 +3,7 @@ package com.librarymanagementsystem.service;
 import com.librarymanagementsystem.dao.PatronRepo;
 import com.librarymanagementsystem.dto.PatronDto;
 import com.librarymanagementsystem.dto.mapstruct.PatronMapper;
-import com.librarymanagementsystem.entity.Patron;
+import com.librarymanagementsystem.model.Patron;
 import com.librarymanagementsystem.exception.PatronException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

@@ -2,7 +2,7 @@ package com.librarymanagementsystem.controller;
 
 
 import com.librarymanagementsystem.dto.BookDto;
-import com.librarymanagementsystem.entity.Book;
+import com.librarymanagementsystem.model.Book;
 import com.librarymanagementsystem.exception.BookException;
 import com.librarymanagementsystem.service.BookService;
 import io.swagger.v3.oas.annotations.Operation;

@@ -4,7 +4,7 @@ package com.librarymanagementsystem.service;
 import com.librarymanagementsystem.dao.BookRepo;
 import com.librarymanagementsystem.dto.BookDto;
 import com.librarymanagementsystem.dto.mapstruct.BookMapper;
-import com.librarymanagementsystem.entity.Book;
+import com.librarymanagementsystem.model.Book;
 import com.librarymanagementsystem.exception.BookException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
